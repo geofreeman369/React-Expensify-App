@@ -25,9 +25,9 @@ export class ExpenseListFilters extends React.Component {
   };
   onSortChange = e => {
     if (e.target.value === "date") {
-      this.propssortByDate();
+      this.props.sortByDate();
     } else if (e.target.value === "amount") {
-      this.propssortByAmount();
+      this.props.sortByAmount();
     }
   };
   render() {
@@ -38,7 +38,7 @@ export class ExpenseListFilters extends React.Component {
           value={this.props.filters.text}
           onChange={this.onTextChange}
         />
-        <select value={this.props.filters.sortBy} onChange={onSortChange}>
+        <select value={this.props.filters.sortBy} onChange={this.onSortChange}>
           <option value="date">Date</option>
           <option value="amount">Amount</option>
         </select>
@@ -63,8 +63,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setTextFilter: text => dispatch(setTextFilter(text)),
-  sortByDate: () => dispatch(sortByDate),
-  sortByAmount: () => dispatch(sortByAmount),
+  sortByDate: () => dispatch(sortByDate()),
+  sortByAmount: () => dispatch(sortByAmount()),
   setStartDate: startDate => dispatch(setStartDate(startDate)),
   setEndDate: endDate => dispatch(setEndDate(endDate))
 });
