@@ -321,7 +321,7 @@ exports[`should render erropr for invalid form submission 1`] = `
 exports[`should render erropr for invalid form submission 2`] = `
 <div>
   <p>
-    Please provide description amount.
+    Please provide description and amount.
   </p>
   <form
     onSubmit={[Function]}
